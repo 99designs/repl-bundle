@@ -48,6 +48,11 @@ Run via the Symfony console:
 app/console repl
 ```
 
+The following variables are imported into the global namespace:
+
+ * `$kernel`: Application kernel
+ * `$container`: The DI container
+
 
  [boris]: https://github.com/d11wtq/boris
  [composer]: http://getcomposer.org/
