@@ -21,8 +21,12 @@ class ReplCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        // TODO: plumb InputInterface into Boris into OutputInterface?
+        $application = $this->getApplication();
+        $application->setCatchExceptions(false);
+        $application->setAutoExit(false);
+
         $container = $this->getContainer();
+
         $boris = new Boris('php> ');
         $boris->setLocal(array(
             'container' => $container,
