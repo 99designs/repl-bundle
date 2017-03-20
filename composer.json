@@ -3,8 +3,8 @@
     "description": "Add a Boris repl command to the Symfony console",
     "require": {
         "php": ">=5.3.2",
-        "symfony/console": "~2.4",
-        "symfony/framework-bundle": "~2.4",
+        "symfony/console": "~2 | ~3",
+        "symfony/framework-bundle": "~2 | ~3",
         "d11wtq/boris": "~1.0.0"
     },
     "require-dev": {
