@@ -3,15 +3,24 @@
 namespace NinetyNine\Bundle\ReplBundle\Command;
 
 use Boris\Boris;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Start a Boris (https://github.com/d11wtq/boris) REPL
  */
-class ReplCommand extends ContainerAwareCommand
+class ReplCommand extends Command
 {
+    private $container;
+
+    public function __construct(ContainerInterface $container)
+    {
+        $this->container = $container;
+        parent::__construct();
+    }
+
     protected function configure()
     {
         $this
@@ -25,12 +34,10 @@ class ReplCommand extends ContainerAwareCommand
         $application->setCatchExceptions(false);
         $application->setAutoExit(false);
 
-        $container = $this->getContainer();
-
         $boris = new Boris('php> ');
         $boris->setLocal(array(
-            'container' => $container,
-            'kernel' => $container->get('kernel'),
+            'container' => $this->container,
+            'kernel' => $this->container->get('kernel'),
         ));
         $boris->start();
     }
