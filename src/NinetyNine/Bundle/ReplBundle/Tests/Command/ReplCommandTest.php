@@ -1,6 +1,6 @@
 <?php
 
-namespace NinetyNine\Bundle\ReplBundle\Tests\Commands;
+namespace NinetyNine\Bundle\ReplBundle\Tests\Command;
 
 use Mockery;
 use NinetyNine\Bundle\ReplBundle\Command\ReplCommand;
