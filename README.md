@@ -11,11 +11,7 @@ Installation
 Add as a development dependency to [composer.json][composer]:
 
 ```json
-{
-  "require-dev": {
-    "99designs/repl-bundle": "0.0.*@dev"
-  }
-}
+composer require --dev 99designs/repl-bundle
 ```
 
 Register the bundle in `app/AppKernel.php`:
