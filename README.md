@@ -1,9 +1,13 @@
 REPL bundle
 ===========
 
+---
+
+**Important**: This bundle is no longer under active development. Consider using [PsyshBundle][psyshbundle] as an alternative.
+
+---
 
 Provides a `repl` command for the Symfony console, powered by [Boris][boris].
-
 
 Installation
 ------------
@@ -33,7 +37,6 @@ class AppKernel extends Kernel
     }
 }
 ```
-
 
 Usage
 -----
@@ -65,7 +68,7 @@ If you see these errors, you'll need to edit your PHP CLI configuration
 (typically found at `/etc/php5/cli/php.ini`) to allow invocation of the named
 functions.
 
-
+ [psyshbundle]: https://github.com/theofidry/PsyshBundle
  [boris]: https://github.com/d11wtq/boris
  [composer]: http://getcomposer.org/
  [pcntl]: http://www.php.net/manual/en/book.pcntl.php
